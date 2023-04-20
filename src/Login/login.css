@@ -23,11 +23,9 @@
 
 @keyframes caerAnimacion {
     from {
-      top: -100px;
       opacity: 0;
     }
     to {
-      top: 0;
       opacity: 1;
     }
   }
@@ -44,8 +42,7 @@
 .main-background-login header >.form-login{
     display: flex;
     flex-direction: column;
-    max-height: 30vh;
-    height: 25vh;
+    height: 20vh;
     background-color: #282735;
     border-radius: 20px;
 }
@@ -59,6 +56,8 @@
     background-color: #614ad9;
     color: white;
     padding: 5px;
+    margin-bottom: 20px;
+    max-height: 100%;
 }
 
 .main-background-login header >.form-login > input{
@@ -72,4 +71,60 @@
     text-decoration: underline;
     margin-top: 10px;
 }
+
+@media only screen and (max-height: 795px) {
+    /* Agrega aquí tus estilos específicos */
+    .main-background-login header >.form-login{
+        display: flex;
+        flex-direction: column;
+        height: 25vh;
+        background-color: #282735;
+        border-radius: 20px;
+    }
+
+    
+}
+
+@media only screen and (max-height: 628px) {
+    /* Agrega aquí tus estilos específicos */
+    .main-background-login header >.form-login{
+        display: flex;
+        flex-direction: column;
+        height: 30vh;
+        background-color: #282735;
+        border-radius: 20px;
+    }
+
+    
+  }
+
+
+  @media only screen and (max-height: 533px) {
+    /* Agrega aquí tus estilos específicos */
+    .main-background-login header >.form-login{
+        display: flex;
+        flex-direction: column;
+        height: 35vh;
+        background-color: #282735;
+        border-radius: 20px;
+    }
+
+    
+  }
+
+
+  @media only screen and (max-height: 400px) {
+    /* Agrega aquí tus estilos específicos */
+    .main-background-login header >.form-login{
+        display: flex;
+        flex-direction: column;
+        height: 40vh;
+        background-color: #282735;
+        border-radius: 20px;
+    }
+
+    
+  }
+
+
 
