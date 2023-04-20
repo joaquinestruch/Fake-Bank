@@ -73,7 +73,7 @@
 }
 
 @media only screen and (max-height: 795px) {
-    /* Agrega aquí tus estilos específicos */
+   
     .main-background-login header >.form-login{
         display: flex;
         flex-direction: column;
@@ -86,7 +86,7 @@
 }
 
 @media only screen and (max-height: 628px) {
-    /* Agrega aquí tus estilos específicos */
+    
     .main-background-login header >.form-login{
         display: flex;
         flex-direction: column;
@@ -100,7 +100,7 @@
 
 
   @media only screen and (max-height: 533px) {
-    /* Agrega aquí tus estilos específicos */
+    
     .main-background-login header >.form-login{
         display: flex;
         flex-direction: column;
@@ -114,7 +114,7 @@
 
 
   @media only screen and (max-height: 400px) {
-    /* Agrega aquí tus estilos específicos */
+    
     .main-background-login header >.form-login{
         display: flex;
         flex-direction: column;
