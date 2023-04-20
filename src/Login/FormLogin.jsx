@@ -9,7 +9,7 @@ function FormLogin({changeLogin}) {
 
     const reqOptions = {
       method: "POST",
-      mode: "no-cors",
+      mode: "cors",
       body: JSON.stringify({
         "name": username,
         "password": password
