@@ -44,7 +44,8 @@
 .main-background-login header >.form-login{
     display: flex;
     flex-direction: column;
-    max-height: 25vh;
+    max-height: 30vh;
+    height: 25vh;
     background-color: #282735;
     border-radius: 20px;
 }
