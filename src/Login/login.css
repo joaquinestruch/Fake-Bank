@@ -45,6 +45,7 @@
     height: 20vh;
     background-color: #282735;
     border-radius: 20px;
+    animation: caerAnimacion 1s ease-in-out forwards;
 }
 
 .main-background-login header >.form-login > * {
@@ -70,6 +71,7 @@
     color: white;
     text-decoration: underline;
     margin-top: 10px;
+    animation: caerAnimacion 1s ease-in-out forwards;
 }
 
 @media only screen and (max-height: 795px) {
@@ -118,7 +120,7 @@
     .main-background-login header >.form-login{
         display: flex;
         flex-direction: column;
-        height: 40vh;
+        height: 50vh;
         background-color: #282735;
         border-radius: 20px;
     }
