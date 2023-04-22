@@ -8,8 +8,9 @@ import 'react-toastify/dist/ReactToastify.css';
 function MenuTransfer() {
 
   const [errorMessage, setErrorMessage] = useState(null);
+  const [succesFullTrans, setSuccesFullTrans] = useState(null);
   const  sendTransaccions = async (bankIdSendder, bankIdReciber, amountSender) => {
-
+    
     const reqOptionsSubstracMoney = {
       method: "PUT",
       body: JSON.stringify({
@@ -101,9 +102,11 @@ function MenuTransfer() {
             const res = await fetch(`https://fake-bank-server-production.up.railway.app/api/users/${bankIdReciber}`, changeReciberTranscaccions).catch(error => {return})
             const data = await res.json(); 
             
-            console.log("cambio en las trasnscioones del reicibido")
+            setSuccesFullTrans("Transfer completed successfully")
 
-            console.log("cambio en las trasnacciones del sendder")
+            setTimeout(() => {
+              setSuccesFullTrans(null)
+            }, 2000);
 
           }catch(error){
             
@@ -163,6 +166,16 @@ function MenuTransfer() {
           <div className="error-transaccion-div">
             <p>{errorMessage}</p>
           </div>
+        )
+        : ""
+          
+        
+      }
+      {
+        succesFullTrans != null ? (
+          <div className="success-transaccion-div">
+          <p>{succesFullTrans}</p>
+        </div>
         )
         : ""
       }
