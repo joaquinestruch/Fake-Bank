@@ -2,13 +2,24 @@ import React from 'react'
 
 function UserData() {
 
-    const twoKeys = "Username".substring(0,2)
+    let username = JSON.parse(sessionStorage.getItem("userData"))?.name
+    const maxLength = 5
+
+    if (username.length > maxLength) {
+        const shortStr = username.slice(0, maxLength) + "...";
+        username = shortStr
+      }
+
+    const twoKeys = username?.substring(0,2)
     return (
     <header>
-        <span>Username</span>
+        <span>{username}</span>
+
+        <h1 className="title-userData-home">Fake Bank</h1>
+
         <p>
             {
-                (twoKeys[0]+twoKeys[1]).toUpperCase()
+                twoKeys?.toUpperCase()
             }
         </p>
     </header>

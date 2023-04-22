@@ -9,6 +9,8 @@ import TransferMenu from "./Home/TransferMenu/TransferMenu";
 function Main() {
   const [changeHomeMenu, setChangeHomeMenu] = useState(false);
 
+  const [userDataMain, setUserDataMain] = useState({});
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -18,12 +20,13 @@ function Main() {
       path: "/home",
       element: changeHomeMenu === true ? (
         <TransferMenu
-        
+        userDataMain={userDataMain}
         changeHomeMenu={changeHomeMenu}
         setChangeHomeMenu={setChangeHomeMenu}
         />
       ) : (
         <HomeMenu
+          setUserDataMain = {setUserDataMain}
           changeHomeMenu={changeHomeMenu}
           setChangeHomeMenu={setChangeHomeMenu}
         />

@@ -1,19 +1,53 @@
+import { useEffect, useState } from "react"
 import Balance from "./Balance"
 import Nav from "./Nav"
 import TransferHistory from "./TransferHistory"
 import UserData from "./UserData"
 
 import "./home.css"
-function HomeMenu({changeHomeMenu, setChangeHomeMenu}) {
-  return (
+import BankId from "./BankId"
+import NoLogin from "./NoLogin"
 
-    <main className="main-menu-home">
-    <UserData/>
-    <Balance/>
-    <TransferHistory/>
-    <Nav changeHomeMenu={changeHomeMenu} setChangeHomeMenu={setChangeHomeMenu}/>
-    </main>
-  )
+const getUserData = (funcion) => {
+
+  const userId = sessionStorage.getItem("userId"); 
+
+  fetch(`https://fake-bank-server-production.up.railway.app/api/users/${userId}`)
+  .then((res) => {
+    return res.json()
+  })
+  .then(data => {
+    sessionStorage.setItem("userData", JSON.stringify(data));
+    funcion(data)
+  }) 
+
+}; 
+
+
+function HomeMenu({changeHomeMenu, setChangeHomeMenu}) {
+
+    const [userDataMain, setUserDataMain] = useState({});
+
+    useEffect(() => {
+      getUserData(setUserDataMain);
+    }, [])  
+    return (
+      sessionStorage.getItem("userId") != undefined ?  (
+    
+      
+        <main className="main-menu-home">
+          <UserData/>
+          <Balance money={userDataMain.money}/>
+          <BankId/>
+          <TransferHistory/>
+          <Nav changeHomeMenu={changeHomeMenu} setChangeHomeMenu={setChangeHomeMenu}/>
+        </main>
+      )
+  
+      : <NoLogin/>
+    )
+
+
 }
 
 export default HomeMenu

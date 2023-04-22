@@ -6,6 +6,32 @@
     flex-direction: column;
 }
 
+.main-menu-home > .bankId-user-home{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.main-menu-home > .bankId-user-home > button{
+    background-color: #614ad9;
+    color: white;
+    padding: 8px;
+    margin-bottom: 20px;
+    max-height: 100%;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+}
+
+.main-menu-home > .bankId-user-home > button > svg{
+    margin-left: 10px;
+
+}
+
 .main-menu-home > header{
     background-color: #614ad9;
     height: 7%;
@@ -25,6 +51,15 @@
     background-color: rgb(91, 38, 160);
     padding: 10px;
     text-align: center;
+}
+
+header > .title-userData-home{
+    font-size: 1.2rem;
+    color: #614ad9;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Archivo Black', sans-serif;
 }
 
 .main-menu-home > .home-balance {
@@ -88,3 +123,43 @@
     background-color: #614ad9;
     transition: all .2s;
   }
+
+
+.header-no-login{
+    display: flex;
+    background-color: #614ad9;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 9vh;
+}
+
+.main-no-login{
+    background-color: #2a2a3a;
+    height: 91vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.main-no-login > h1{
+    color: white;
+    font-size: 2rem;  
+    font-family: 'Archivo Black', sans-serif;
+    margin: 20px;
+    max-width: 60%;
+    text-align: center;
+}
+
+.main-no-login > a{
+    background-color: #614ad9;
+    color: white;
+    text-align: center;
+    width: 60%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+

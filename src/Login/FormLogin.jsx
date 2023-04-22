@@ -11,7 +11,8 @@ function FormLogin({ changeLogin }) {
   const [error, setError] = useState(false);
 
 
-  async function loginUser(username, password) {
+  async function registerUser(username, password) {
+
     const reqOptions = {
       method: "POST",
       body: JSON.stringify({
@@ -24,6 +25,7 @@ function FormLogin({ changeLogin }) {
     };
 
     try {
+
       const res = await fetch(
         "https://fake-bank-server-production.up.railway.app/api/users",
         reqOptions
@@ -31,19 +33,22 @@ function FormLogin({ changeLogin }) {
       const data = await res.json();
       setDataUserLogin(data);
       
-      if(dataUserLogin._id != undefined){
+      if(data._id != undefined){
         setSuccess(true);
         setError(false);
 
+        sessionStorage.setItem("userId", data._id);      
+  
         setTimeout(function(){
           window.location.href = window.location.href + "home";
         }, 1500)
+
         return
+
       }
+
       setSuccess(false);
       setError(true);
-      console.log(dataUserLogin)
-      
 
     } catch (error) {
       console.log({ "fetch error": error });
@@ -52,13 +57,58 @@ function FormLogin({ changeLogin }) {
     }
   }
 
+
+  async function loginUser(username, password) {
+
+    const reqOptions = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      const res = await fetch(
+        `https://fake-bank-server-production.up.railway.app/api/users/search/forUsername/${username}/${password}`,
+        reqOptions
+      );
+      const data = await res.json();
+
+      setDataUserLogin(data);
+      
+      if(data[0]._id != undefined){
+        setSuccess(true);
+        setError(false);
+
+        sessionStorage.setItem("userId", data[0]._id);      
+  
+        setTimeout(function(){
+          window.location.href = window.location.href + "home";
+        }, 1500)
+
+        return
+
+      }
+
+      setSuccess(false);
+      setError(true);
+
+    } catch (error) {
+      console.log({ "fetch error": error });
+      setError(true);
+      setSuccess(false);
+    }
+  }
+
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new window.FormData(event.target);
     const username = data.get("user");
     const password = data.get("password");
 
-    loginUser(username, password);
+    changeLogin ? loginUser(username, password) : registerUser(username, password);
   };
 
   return (
