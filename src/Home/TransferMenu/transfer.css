@@ -30,9 +30,10 @@
 
 .menu-transfer > .menu-transfer-send{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: 75%;
     margin: 20px;
+
 }
 
 .menu-transfer > .menu-transfer-send > form{
@@ -70,4 +71,12 @@
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 20px;
+}
+
+.error-transaccion-div{
+    background-color: rgb(241, 23, 23);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
 }

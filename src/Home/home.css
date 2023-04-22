@@ -82,9 +82,12 @@ header > .title-userData-home{
     border-radius: 20px;
     display: flex;
     margin: auto;
-    height: 60%;
+    height: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    overflow-y: scroll;
+
     
 }
 
@@ -92,6 +95,7 @@ header > .title-userData-home{
     color: white;
     padding: 20px;
     opacity: 0.5;
+    text-align: center;
 }
 
 
@@ -163,3 +167,28 @@ header > .title-userData-home{
     font-weight: bold;
 }
 
+.div-transaccion-history-indi{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    width: 90%;
+    background-color: #3e3e55;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 20px;
+}
+.p-green{
+    color: rgb(6, 121, 6);
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(100, 177, 100);
+}
+
+.p-red{
+    color: rgb(121, 6, 6);
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(177, 100, 100);
+}

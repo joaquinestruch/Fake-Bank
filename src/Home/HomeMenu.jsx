@@ -31,15 +31,17 @@ function HomeMenu({changeHomeMenu, setChangeHomeMenu}) {
     useEffect(() => {
       getUserData(setUserDataMain);
     }, [])  
+
+
     return (
       sessionStorage.getItem("userId") != undefined ?  (
     
       
         <main className="main-menu-home">
           <UserData/>
-          <Balance money={userDataMain.money}/>
+          <Balance money={userDataMain?.money}/>
           <BankId/>
-          <TransferHistory/>
+          <TransferHistory transaccions={userDataMain.transaccions}/>
           <Nav changeHomeMenu={changeHomeMenu} setChangeHomeMenu={setChangeHomeMenu}/>
         </main>
       )

@@ -5,8 +5,8 @@ function UserData() {
     let username = JSON.parse(sessionStorage.getItem("userData"))?.name
     const maxLength = 5
 
-    if (username.length > maxLength) {
-        const shortStr = username.slice(0, maxLength) + "...";
+    if (username?.length > maxLength) {
+        const shortStr = username?.slice(0, maxLength) + "...";
         username = shortStr
       }
 
