@@ -81,6 +81,7 @@
     border-radius: 20px;
     padding: 10px;
     color: white;
+    max-width: 20%;
 }
 
 .nav-home-transfer > button:focus {
