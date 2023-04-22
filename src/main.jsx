@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Login/Login";
+import HomeMenu from "./Home/HomeMenu";
+
 
 const router = createBrowserRouter([
   {
@@ -11,7 +13,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/home",
-    element: <div>home</div>
+    element: <HomeMenu/>
   }
 ]);
 
