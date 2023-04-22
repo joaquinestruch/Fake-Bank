@@ -152,6 +152,12 @@ function MenuTransfer() {
 
   return (
     <div className="menu-transfer-send">
+
+      <button className="button-copy-bank-id-example" onClick={(e) => {
+        e.preventDefault()
+        navigator.clipboard.writeText("6443c5db6bb872c98b71703d")
+      }}>Example Bank Id</button>
+
       <form onSubmit={(e) => handleSubmit(e)}>
         <label htmlFor="BankId">Bank Id</label>
         <input  required type="text" name="BankId" placeholder="123213515135" />

@@ -88,3 +88,8 @@
     padding: 5px;
     border-radius: 10px;
 }
+
+.button-copy-bank-id-example{
+    color: white;
+    text-decoration: underline;
+}
