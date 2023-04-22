@@ -4,14 +4,14 @@ import TransferHistory from "./TransferHistory"
 import UserData from "./UserData"
 
 import "./home.css"
-function HomeMenu() {
+function HomeMenu({changeHomeMenu, setChangeHomeMenu}) {
   return (
 
     <main className="main-menu-home">
     <UserData/>
     <Balance/>
     <TransferHistory/>
-    <Nav/>
+    <Nav changeHomeMenu={changeHomeMenu} setChangeHomeMenu={setChangeHomeMenu}/>
     </main>
   )
 }

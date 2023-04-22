@@ -1,26 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Login/Login";
 import HomeMenu from "./Home/HomeMenu";
+import TransferMenu from "./Home/TransferMenu/TransferMenu";
 
+function Main() {
+  const [changeHomeMenu, setChangeHomeMenu] = useState(false);
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Login/>,
-  },
-  {
-    path:"/home",
-    element: <HomeMenu/>
-  }
-]);
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Login />,
+    },
+    {
+      path: "/home",
+      element: changeHomeMenu === true ? (
+        <TransferMenu
+        
+        changeHomeMenu={changeHomeMenu}
+        setChangeHomeMenu={setChangeHomeMenu}
+        />
+      ) : (
+        <HomeMenu
+          changeHomeMenu={changeHomeMenu}
+          setChangeHomeMenu={setChangeHomeMenu}
+        />
+      ),
+    },
+  ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <ChakraProvider>
-      <RouterProvider router={router} />
-    </ChakraProvider>
-  </React.StrictMode>
-);
+  return (
+    <React.StrictMode>
+      <ChakraProvider>
+        <RouterProvider router={router} />
+      </ChakraProvider>
+    </React.StrictMode>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<Main />);
