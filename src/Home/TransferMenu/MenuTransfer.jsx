@@ -11,6 +11,7 @@ function MenuTransfer() {
   const [succesFullTrans, setSuccesFullTrans] = useState(null);
   const  sendTransaccions = async (bankIdSendder, bankIdReciber, amountSender) => {
     
+
     const reqOptionsSubstracMoney = {
       method: "PUT",
       body: JSON.stringify({
@@ -52,6 +53,18 @@ function MenuTransfer() {
         "Content-Type": "application/json",
       },
     };
+
+    const moneyUser = JSON.parse(sessionStorage.getItem("userData")); 
+
+    if(amountSender > moneyUser.money ){
+      setErrorMessage('Insufficient balance.');
+      
+      setTimeout(() => {
+        setErrorMessage(null)
+      }, 2000);
+
+      return
+    }
 
     if(bankIdSendder == bankIdReciber){
       setErrorMessage('You cannot make transfers to yourself.');
