@@ -101,7 +101,7 @@ header > .title-userData-home{
 
 
 .nav-home-transfer{
-    height: 10vh;
+    min-height: 100px;
     width: 90%;
     background-color: #4e4c6b;
     display: flex;
@@ -115,7 +115,7 @@ header > .title-userData-home{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 18px;
     font-weight: 400;
     border-radius: 20px;
     padding: 10px;
