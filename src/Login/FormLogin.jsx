@@ -28,7 +28,7 @@ function FormLogin({ changeLogin }) {
     try {
 
       const res = await fetch(
-        "https://fake-bank-server-production.up.railway.app/api/users",
+        "https://fake-bank-server.vercel.app/api/users",
         reqOptions
       );
       const data = await res.json();
@@ -70,7 +70,7 @@ function FormLogin({ changeLogin }) {
 
     try {
       const res = await fetch(
-        `https://fake-bank-server-production.up.railway.app/api/users/search/forUsername/${username}/${password}`,
+        `https://fake-bank-server.vercel.app/api/users/search/forUsername/${username}/${password}`,
         reqOptions
       );
       const data = await res.json();

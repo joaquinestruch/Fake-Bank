@@ -78,7 +78,7 @@ function MenuTransfer() {
 
     try{
 
-      const res = await fetch(`https://fake-bank-server-production.up.railway.app/api/users/${bankIdReciber}/add`, reqOptionsSubstracMoney).catch(error => {
+      const res = await fetch(`https://fake-bank-server.vercel.app/api/users/${bankIdReciber}/add`, reqOptionsSubstracMoney).catch(error => {
         return
       })
       const data = await res.json(); 
@@ -95,7 +95,7 @@ function MenuTransfer() {
 
       try{
         
-        const res = await fetch(`https://fake-bank-server-production.up.railway.app/api/users/${bankIdSendder}/subtract`, reqOptionsSubstracMoney).catch(error => {return})
+        const res = await fetch(`https://fake-bank-server.vercel.app/api/users/${bankIdSendder}/subtract`, reqOptionsSubstracMoney).catch(error => {return})
         const data = await res.json(); 
 
         if(data.error != undefined){
@@ -105,14 +105,14 @@ function MenuTransfer() {
 
         try{
 
-          const res = await fetch(`https://fake-bank-server-production.up.railway.app/api/users/${bankIdSendder}`, changeSenderTranscaccions).catch(error => {return})
+          const res = await fetch(`https://fake-bank-server.vercel.app/api/users/${bankIdSendder}`, changeSenderTranscaccions).catch(error => {return})
           const data = await res.json(); 
 
           console.log("cambio en las trasnacciones del sendder")
 
           try{
 
-            const res = await fetch(`https://fake-bank-server-production.up.railway.app/api/users/${bankIdReciber}`, changeReciberTranscaccions).catch(error => {return})
+            const res = await fetch(`https://fake-bank-server.vercel.app/api/users/${bankIdReciber}`, changeReciberTranscaccions).catch(error => {return})
             const data = await res.json(); 
             
             setSuccesFullTrans("Transfer completed successfully")

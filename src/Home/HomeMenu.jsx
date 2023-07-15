@@ -12,7 +12,7 @@ const getUserData = (funcion) => {
 
   const userId = sessionStorage.getItem("userId"); 
 
-  fetch(`https://fake-bank-server-production.up.railway.app/api/users/${userId}`)
+  fetch(`https://fake-bank-server.vercel.app/api/users/${userId}`)
   .then((res) => {
     return res.json()
   })
