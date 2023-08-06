@@ -8,7 +8,7 @@ function Login() {
 
     return (
     <main className="main-background-login">
-      <h1 className="title-login">Fake Bank</h1>
+      <h1 className="title-login">FB Copy</h1>
       <header>
         <FormLogin changeLogin={changeLogin}/>
         <button onClick={(e) => {

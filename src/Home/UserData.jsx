@@ -15,7 +15,7 @@ function UserData() {
     <header>
         <span>{username}</span>
 
-        <h1 className="title-userData-home">Fake Bank</h1>
+        <h1 className="title-userData-home">FB Copy</h1>
 
         <p>
             {
